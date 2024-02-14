@@ -1,4 +1,4 @@
-Tabla "pacientes":
+# Tabla "pacientes":
 
 id (int, primary key, auto increment)
 historia_clinica (int, unique)
@@ -7,11 +7,13 @@ numero_seguridad_social (varchar)
 direccion (varchar)
 telefono (varchar)
 fecha_nacimiento (date)
-Tabla "servicios":
+
+# Tabla "servicios":
 
 id (int, primary key, auto increment)
 nombre (varchar)
-Tabla "ingresos":
+
+# Tabla "ingresos":
 
 id (int, primary key, auto increment)
 paciente_id (int, foreign key references pacientes.id)
@@ -19,7 +21,8 @@ servicio_id (int, foreign key references servicios.id)
 fecha_ingreso (date)
 fecha_alta (date)
 diagnostico (varchar)
-Tabla "consumos":
+
+# Tabla "consumos":
 
 id (int, primary key, auto increment)
 paciente_id (int, foreign key references pacientes.id)
@@ -27,7 +30,8 @@ servicio_id (int, foreign key references servicios.id)
 fecha_consumo (date)
 unidades (int)
 medicamento_id (int, foreign key references medicamentos.id)
-Tabla "medicamentos":
+
+# Tabla "medicamentos":
 
 id (int, primary key, auto increment)
 registro_id (int)
@@ -39,7 +43,8 @@ codigo_proveedor (varchar)
 unidades_por_envase (int)
 precio_por_unidad (decimal)
 precio_total_por_envase (decimal)
-Tabla "facultativos":
+
+# Tabla "facultativos":
 
 id (int, primary key, auto increment)
 colegiado_id (int, unique)
@@ -47,14 +52,16 @@ nombre (varchar)
 direccion (varchar)
 telefono (varchar)
 servicio_id (int, foreign key references servicios.id)
-Tabla "recetas":
+
+# Tabla "recetas":
 
 id (int, primary key, auto increment)
 facultativo_id (int, foreign key references facultativos.id)
 paciente_id (int, foreign key references pacientes.id)
 ingreso_id (int, foreign key references ingresos.id)
 medicamento_id (int, foreign key references medicamentos.id)
-Tabla "revisiones":
+
+# Tabla "revisiones":
 
 id (int, primary key, auto increment)
 facultativo_id (int, foreign key references facultativos.id)
