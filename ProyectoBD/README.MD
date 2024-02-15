@@ -71,7 +71,8 @@ fecha (date)
 hora (time)
 informe (text)
 
-[Diagrama ER]
+>[!NOTE]
+>Diagrama Entidad Relacion
 # Diagrama de entidad-relación:
 
 Pacientes (1,N) --- (0,N) Ingresos: Un paciente puede tener cero o más ingresos, y cada ingreso pertenece a un paciente.
